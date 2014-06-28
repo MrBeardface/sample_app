@@ -5,8 +5,8 @@
 $grayMediumLight: #eaeaea;
 
 @mixin box_sizing {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
   box-sizing: border-box;
 }
 
@@ -35,17 +35,6 @@ textarea {
   }
 }
 
-/* miscelaneous */
-
-.debug_dump {
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-
-
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,7 +49,7 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
+  font-size: 1.7em;
   letter-spacing: -1px;
   margin-bottom: 30px;
   text-align: center;
@@ -72,6 +61,7 @@ p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
+
 
 /* header */
 
@@ -100,12 +90,12 @@ footer {
   color: $grayLight;
   a {
     color: $gray;
-    &:hover {
+    &:hover { 
       color: $grayDarker;
     }
   }  
-  small{
-    float: left;
+  small { 
+    float: left; 
   }
   ul {
     float: right;
@@ -115,7 +105,17 @@ footer {
       margin-left: 10px;
     }
   }
-} 
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
 
 /* sidebar */
 
@@ -142,17 +142,45 @@ aside {
   }
 }
 
+.stats {
+  overflow: auto;
+  a {
+    float: left;
+    padding: 0 10px;
+    border-left: 1px solid $grayLighter;
+    color: gray;
+    &:first-child {
+      padding-left: 0;
+      border: 0;
+    }
+    &:hover {
+      text-decoration: none;
+      color: $blue;
+    }
+  }
+  strong {
+    display: block;
+  }
+}
+
+.user_avatars {
+  overflow: auto;
+  margin-top: 10px;
+  .gravatar {
+    margin: 1px 1px;
+  }
+}
 .gravatar {
   float: left;
   margin-right: 10px;
 }
-
 
 /* forms */
 
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
+  padding: 10px;
   margin-bottom: 15px;
   @include box_sizing;
 }
@@ -172,9 +200,9 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
-}
+ }
 
-/* Users index */
+ /* users index */
 
 .users {
   list-style: none;
@@ -187,14 +215,6 @@ input {
       border-bottom: 1px solid $grayLighter;
     }
   }
-
-}
-
-/* Debug data */
-
-#debug-data {
-  display: inline-block;
-  width: 100%;
 }
 
 /* microposts */
